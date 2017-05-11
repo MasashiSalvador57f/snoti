@@ -9,8 +9,6 @@ import (
 	"net/url"
 	"os"
 	"strings"
-
-	"github.com/davecgh/go-spew/spew"
 )
 
 type webhookRequest struct {
@@ -69,13 +67,11 @@ func main() {
 
 			rb := url.Values{}
 			rb.Add("payload", string(buff))
-			spew.Dump(rb)
 
 			req, _ := http.NewRequest("POST", wURL, strings.NewReader(rb.Encode()))
 			req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
 
 			resp, err := client.Do(req)
-			fmt.Println(resp)
 
 			if resp.StatusCode > 200 {
 				panic("response is not OK when posting webhook")
