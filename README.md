@@ -3,7 +3,7 @@
 Q: what is snoti?  
 A: just a simple tool passing stdin -> slack channel  
 
-### motivation
+### Motivation
 Many language provides the ways to notify messages to slack channels, but interpreter languages require
 some execution environments. When handling with logs in servers to setup environments is sometimes a problem.
 (we simply want to send logs but we have to install some intepreter).
